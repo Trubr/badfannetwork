@@ -1,0 +1,26 @@
+/**
+ * Lista de acessos
+ */
+rule EverybodyCanReadEverything {
+    description: "Todos os times podem ler todas as informacoes"
+    participant: "com.trubr.badfan.User"
+    operation: READ
+    resource: "com.trubr.badfan.*"
+    action: ALLOW
+}
+
+rule EverybodyCanSubmitTransactions {
+    description: "Todos os times podem submeter transacoes"
+    participant: "com.trubr.badfan.User"
+    operation: CREATE
+    resource: "com.trubr.badfan.User"
+    action: ALLOW
+}
+
+rule SystemACL {
+  description:  "System ACL to permit all access"
+  participant: "org.hyperledger.composer.system.Participant"
+  operation: ALL
+  resource: "org.hyperledger.composer.system.**"
+  action: ALLOW
+}

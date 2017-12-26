@@ -1,0 +1,39 @@
+/**
+ * Bad sport supporter network
+ */
+namespace com.trubr.badfan
+
+asset Team identified by teamId{
+  o String teamId
+  o String name
+  o String countryCode
+  o String type
+  o Boolean active
+}
+asset Fan identified by fanId {
+  o String fanId
+  --> User reporter
+  o String nationalDocument
+  o String name 
+  o String teamDocument   
+  o Double reputation  
+}
+participant User identified by userId {
+  o String userId   
+  o String email
+  --> Team team
+}
+transaction ReportFan {
+  --> Fan fan
+  --> User reporter
+  o Double reputation
+}
+event SuccessEvent {
+  o String eventName
+  o Double reputation
+  --> Fan fan
+  --> User reporter  
+}
+event ErrorEvent {
+  o String eventName
+}
