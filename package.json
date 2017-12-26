@@ -5,8 +5,8 @@
   "name": "badfan-network",
   "version": "1.1.0",
   "description": "The bad fan reputation reporter for teams",
-  "networkImage": "https://hyperledger.github.io/composer-sample-networks/packages/basic-sample-network/networkimage.svg",
-  "networkImageanimated": "https://hyperledger.github.io/composer-sample-networks/packages/basic-sample-network/networkimageanimated.svg",
+  "networkImage": "https://raw.githubusercontent.com/Trubr/badfannetwork/master/networkimage.svg",
+  "networkImageanimated": "https://raw.githubusercontent.com/Trubr/badfannetwork/master/networkimageanimated.svg",
   "scripts": {
     "prepublish": "mkdirp ./dist && composer archive create --sourceType dir --sourceName . -a ./dist/badfan-network.bna",
     "pretest": "npm run lint",
@@ -44,6 +44,10 @@
     "mocha": "^3.2.0",
     "moment": "^2.17.1",
     "nyc": "^11.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Trubr/badfannetwork"
   },
   "license-check-config": {
     "src": [
